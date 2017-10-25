@@ -235,8 +235,7 @@ main (int argc, char **argv)
   sigaction (SIGTERM, &signalAction, NULL);
   sigaction (SIGPIPE, &signalAction, NULL);
 
-  GST_INFO ("Kmsc version: %s", get_version () );
-  GST_INFO ("Compiled at: %s %s", __DATE__, __TIME__ );
+  GST_INFO ("Kurento Media Server version: %s", get_version () );
 
   loadConfig (config, confFile, modulesConfigPath);
 
@@ -253,14 +252,14 @@ main (int argc, char **argv)
   /* Start transport */
   transport->start ();
 
-  GST_INFO ("Mediaserver started");
+  GST_INFO ("Kurento Media Server started");
 
   loop->run ();
 
   transport->stop();
   MediaSet::deleteMediaSet();
 
-  GST_INFO ("Mediaserver stopped");
+  GST_INFO ("Kurento Media Server stopped");
 
   return 0;
 }
